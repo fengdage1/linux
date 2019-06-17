@@ -1,0 +1,2 @@
+#统计ESTABLISHED的，也可换成TIME_WAIT等等
+netstat -na|grep ESTABLISHED|wc -l
