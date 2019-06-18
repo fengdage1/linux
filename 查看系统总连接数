@@ -1,2 +1,5 @@
 #统计ESTABLISHED的，也可换成TIME_WAIT等等
 netstat -na|grep ESTABLISHED|wc -l
+
+#查看指定进程打开的socket数量
+ls /proc/<pid>/fd -l | grep socket: | wc -l
