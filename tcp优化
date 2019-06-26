@@ -2,5 +2,16 @@
 sysctl -a|grep retries
 
 
+vim /etc/sysctl.conf
+
 TIME_WAIT过多
 net.ipv4.tcp_tw_timeout = 3
+
+
+FIN_WAIT1过多
+主动关闭socket后等待对方fin造成过多FIN_WAIT1，原因是收不到对方fin包会重发
+
+
+net.ipv4.tcp_orphan_retries = 2  #一般设置2，代表只重发2次
+
+sysctl -p #立即生效
