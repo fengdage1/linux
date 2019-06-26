@@ -4,7 +4,7 @@ sysctl -a|grep retries
 
 vim /etc/sysctl.conf
 
-TIME_WAIT过多(一般不要改，几百甚至一两千不算多)
+TIME_WAIT过多(一般不要改，几百甚至一两千不算多，TIME_WAIT不可怕，WAIT_CLOSE才可怕)
 服务端，
 net.ipv4.tcp_tw_recycle=1
 客户端
