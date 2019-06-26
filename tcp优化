@@ -1,6 +1,2 @@
-net.ipv4.tcp_orphan_retries = 0
-net.ipv4.tcp_retries1 = 3
-net.ipv4.tcp_retries2 = 15
-net.ipv4.tcp_syn_retries = 6
-net.ipv4.tcp_synack_retries = 5
-net.ipv6.idgen_retries = 3
+查看当前TCP系统参数
+sysctl -a|grep retries
