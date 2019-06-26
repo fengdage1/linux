@@ -4,8 +4,11 @@ sysctl -a|grep retries
 
 vim /etc/sysctl.conf
 
-TIME_WAIT过多
-net.ipv4.tcp_tw_timeout = 3
+TIME_WAIT过多(一般不要改，几百甚至一两千不算多)
+服务端，
+net.ipv4.tcp_tw_recycle=1
+客户端
+net.ipv4.tcp_tw_reuse = 1
 
 
 FIN_WAIT1过多
