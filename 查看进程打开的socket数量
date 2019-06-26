@@ -1,1 +1,0 @@
-ls /proc//fd -l | grep socket: | wc -l
