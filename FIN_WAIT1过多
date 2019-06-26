@@ -3,3 +3,5 @@
 vim /etc/sysctl.conf
 
 net.ipv4.tcp_orphan_retries = 2  #一般设置2，代表只重发2次
+
+sysctl -p 
