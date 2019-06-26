@@ -1,2 +1,6 @@
 查看当前TCP系统参数
 sysctl -a|grep retries
+
+
+TIME_WAIT过多
+net.ipv4.tcp_tw_timeout = 3
