@@ -1,3 +1,6 @@
+查看允许修改的最大文件打开数
+cat /proc/sys/fs/file-max
+
 vim /etc/security/limits.conf
 * hard nofile 65535
 * soft nofile 65535
