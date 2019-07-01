@@ -1,6 +1,12 @@
-查看当前TCP系统参数
+查看当前TCP系统重发参数
 sysctl -a|grep retries
 
+查看相关连接占用的内存
+ss -tn state fin-wait-1|grep -v Recv-Q|awk 'BEGIN{sum=0}{sum+=$2}END{printf "%.2f\n",sum}'
+ss -tn state time-wait|grep -v Recv-Q|awk 'BEGIN{sum=0}{sum+=$2}END{printf "%.2f\n",sum}'
+ss -tn state established|grep -v Recv-Q|awk 'BEGIN{sum=0}{sum+=$2}END{printf "%.2f\n",sum}'
+
+另ss命令也非常有用
 
 vim /etc/sysctl.conf
 
