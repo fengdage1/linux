@@ -1,5 +1,6 @@
 查看允许修改的最大文件打开数
 cat /proc/sys/fs/file-max
+ulimit -n
 
 # vim /etc/sysctl.conf
 fs.file-max = 65535
