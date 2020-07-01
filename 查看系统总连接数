@@ -3,3 +3,6 @@ netstat -na|grep ESTABLISHED|wc -l
 
 #查看指定进程打开的socket数量
 ls /proc/<pid>/fd -l | grep socket: | wc -l
+
+#查看各种连接的总数
+netstat -ant |awk 'NR>2{print $6}'|sort|uniq -c|sort -rn 
