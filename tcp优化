@@ -12,9 +12,9 @@ vim /etc/sysctl.conf
 
 TIME_WAIT过多(一般不要改，几百甚至一两千不算多，TIME_WAIT不可怕，WAIT_CLOSE才可怕)
 服务端，
-net.ipv4.tcp_tw_recycle=1
+net.ipv4.tcp_tw_recycle=1  #快速回收，貌似有隐患
 客户端
-net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_reuse = 1  #socket复用
 
 
 FIN_WAIT1过多
@@ -22,5 +22,11 @@ FIN_WAIT1过多
 
 
 net.ipv4.tcp_orphan_retries = 2  #一般设置2，代表只重发2次
+
+推荐配置方案
+net.ipv4.tcp_fin_timeout=30 #fin 等待时间,减少TIME_WAIT
+net.ipv4.tcp_orphan_retries=2 #本端试图关闭TCP连接之前重试多少次。缺省值是7,=0并不是想像中的不重试
+net.ipv4.tcp_retries2=5 #在丢弃激活(已建立通讯状况)的TCP连接之前﹐需要进行多少次重试。默认值为15
+
 
 sysctl -p #立即生效
