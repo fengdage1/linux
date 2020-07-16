@@ -1,0 +1,2 @@
+dmesg|grep mongo //查看mongodb被杀是不是被linux kill了
+
